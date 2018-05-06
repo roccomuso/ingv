@@ -1,0 +1,37 @@
+{
+  "name": "ingv",
+  "version": "1.0.0",
+  "description": "Ingv API client - Easily get INGV Earthquake events",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "engines": {
+    "node": ">=6.*.*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roccomuso/ingv.git"
+  },
+  "keywords": [
+    "ingv",
+    "earthquake",
+    "api",
+    "events",
+    "quake",
+    "italy"
+  ],
+  "author": "Rocco Musolino (@roccomuso)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roccomuso/ingv/issues"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "csv-parse": "^2.2.0",
+    "moment": "^2.22.1",
+    "node-fetch": "^2.1.2"
+  }
+}

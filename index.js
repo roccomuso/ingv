@@ -17,23 +17,25 @@ function getEvents (opts = {}) {
   return new Promise((resolve, reject) => {
     let parser = parse(PARSER_OPTION, function (err, data) {
       if (err) return reject(err)
-      resolve(data.map((earthquake) => {
-        earthquake.EventID = earthquake['#EventID']
-        delete earthquake['#EventID']
-        earthquake.DepthKm = earthquake['Depth/Km']
-        delete earthquake['Depth/Km']
-        let final = {}
-        for (let p in earthquake) {
-          final[firstLetterLowerCase(p)] = earthquake[p]
-        }
-        return final
-      }))
+      resolve(data.map(cleanProps))
     })
 
     fetch(composeUrl(opts)).then((res) => {
       res.body.pipe(parser)
     }).catch(reject)
   })
+}
+
+function cleanProps (earthquake) {
+  earthquake.EventID = earthquake['#EventID']
+  delete earthquake['#EventID']
+  earthquake.DepthKm = earthquake['Depth/Km']
+  delete earthquake['Depth/Km']
+  let final = {}
+  for (let p in earthquake) {
+    final[firstLetterLowerCase(p)] = earthquake[p]
+  }
+  return final
 }
 
 function firstLetterLowerCase (str) {

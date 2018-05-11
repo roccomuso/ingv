@@ -1,6 +1,6 @@
 {
   "name": "ingv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ingv API client - Easily get INGV Earthquake events",
   "main": "index.js",
   "scripts": {

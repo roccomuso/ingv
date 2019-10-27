@@ -30,7 +30,7 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "csv-parse": "^2.2.0",
+    "csv-parse": "^4.6.5",
     "moment": "^2.22.1",
     "node-fetch": "^2.1.2"
   }

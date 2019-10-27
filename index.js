@@ -4,7 +4,7 @@ const moment = require('moment')
 
 const PARSER_OPTION = {
   delimiter: '|',
-  auto_parse: true,
+  cast: true,
   columns: true,
   trim: true,
   skip_empty_lines: true
